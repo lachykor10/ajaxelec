@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html  >
+<head>
+  <!-- SiteApp made by Lazaro Cordies -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo2.png" type="image/x-icon">
+  <meta name="description" content="">
+  <title>Control Consumo Electrico</title>  
+  <!-- hace referencia a bootstrap4 hoja de estilo css -->
+  <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+
+<body>
+   
+   
+    <!-- primera barra de navegacion -->
+    <nav class="navbar navbar-expand bg-dark">
+        <!-- division de la barra de navegacion -->
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="#">
+                         <img src="assets/images/logo2.png" alt="APPLACHY" style="height: 5rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-secondary font-italic" href="#">
+                        Lachy APP ELECTRIC CONTROL<br><br></a></span>
+            </div>
+        </div>
+        <ul class="navbar-nav ml-auto">
+            <!-- formulario de la busqueda -->
+            <form class="form-inline my-2 my-lg-0">
+                <input type="search" id="search" class="form-control mr-sm-2" placeholder="Busca tu Lectura">
+                <button class="bt btn-success my-2 my-sm-0" type="submit">BUSCAR</button>                
+            </form>
+        </ul>
+        
+    </nav>
+
+
+    <!-- Contenedor Principal dividido en filas(row) y columnas(col) -->
+    <div class="container p-4">
+        <!-- row -->
+        <div class="row">
+            <!-- columnas 5 -->
+            <div class="col-md-5">
+                <!-- tarjeta -->
+                <div class="card">
+                    <!-- cuerpo tarjeta -->
+                    <div class="card-body">
+                        <!-- formulario de entrada de datos -->
+                        <form id="formulario-lectura"> <!-- aqui se le quita el action porque es una pagina tipo ajax no refresca, poner id -->
+                            <div class="form-group">
+                                <input type="number" id="inlectura" placeholder="Lectura" class="form-control">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block text-center" >Salvar Lectura</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        
+        <!-- este ES EL OTRO lado de la app muestra resultado de la busqueda Y COLUMNA DE lecturas. -->
+        <div class="col-md-7">
+            <div class="card my-4" id="resultado-busqueda">
+                <div class="card-body">
+                    <ul id="contenedor"></ul><!-- en esta ul es donde iran aparar los datos encontrados por el backend localizado por el id="contenedor" -->
+                </div>
+            </div>
+            <!-- table donde se muestra los datos de la BD -->
+            <table class="table table-bordered table-sm">
+                <thead><!-- aqui solo es los encabezados de la tabla -->
+                    <tr>
+                        <td>ID</td>
+                        <td>Lectura</td>
+                        <td>Fecha de Lectura</td>
+                    </tr>
+                </thead>
+                <tbody id="ListaTareas"></tbody><!-- aqui es donde se listaran los datos de la BD enviados por el backend localizando su id="ListaTareas" -->
+            </table>
+        </div>
+        </div>
+    </div>
+
+
+
+<!-- Escrit fundamental para funciones de JS y Boostrap -->
+<script src="js/jquery-3.4.1.min.js"></script>
+<!-- script referencia principal de mi app -->
+<script src="frontend.js"></script>
+  
+  
+  
+  
+</body>
+</html>
